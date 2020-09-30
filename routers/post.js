@@ -10,6 +10,7 @@ router.get('/allpost',requireMiddleware,(req,res)=>{
     .populate("postedBy","_id")
     .populate("postedBy","_id name")
     .populate("comments.postedBy","_id name")    // for comment name 
+    .sort('-createdAt')
     .then(posts=>{
         res.json({posts})
     })
@@ -26,6 +27,7 @@ router.get('/getSubpost',requireMiddleware,(req,res)=>{
     .populate("postedBy","_id")
     .populate("postedBy","_id name")
     .populate("comments.postedBy","_id name")    // for comment name 
+    .sort('-createdAt')
     .then(posts=>{
         res.json({posts})
     })

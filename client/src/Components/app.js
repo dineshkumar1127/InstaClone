@@ -7,6 +7,8 @@ import SignIn from './Screens/signin'
 import SignUp from './Screens/signup'
 import CreatePost from './Screens/createPost'
 import Search from './Screens/userProfile'
+import Reset from './Screens/reset'
+import NewPassword from './Screens/newPassword'
 import {reducerrrr,initState} from '../reducer/userReducer'
 import SubscribedUserPost from './Screens/SubscribedUserPost'
 
@@ -23,6 +25,7 @@ const Routing=()=>{
            // history.push('/')
         }
         else{
+            if(!history.location.pathname.startsWith('/reset'))
             history.push('/signin')
         }
     },[])
@@ -36,6 +39,8 @@ return (   //switch chooses any one of the route path and work on it
             <Route path="/createPost"> <CreatePost /> </Route>
             <Route path="/profile/:userId"> < Search /> </Route>
             <Route path="/SubscribedUserPost"> <SubscribedUserPost /> </Route>
+            <Route exact path="/reset"> <Reset /> </Route>
+            <Route path="/reset/:token"> <NewPassword /> </Route>
 
     </Switch>
 )

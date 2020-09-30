@@ -139,9 +139,9 @@ const Home =()=>{
                     return (
                             <div className="card home-card">
 
-                    <h5 style={{padding:"6px"}}><Link to={ item.postedBy._id !== state._id  ?  "/profile/"+item.postedBy._id : "/profile"}> {item.postedBy.name} </Link> {item.postedBy._id == state._id
+                    <h5 style={{padding:"6px"}}><Link  to={ item.postedBy._id !== state._id  ?  "/profile/"+item.postedBy._id : "/profile"}> {item.postedBy.name} </Link> {item.postedBy._id == state._id
 
-                    && <i className="material-icons" style={{float:"right"}} onClick={()=>{deletePost(item._id)}}
+                    && <i key="0" className="material-icons" style={{float:"right"}} onClick={()=>{deletePost(item._id)}}
                     >delete</i>}</h5>
 
                     <div className="card-image">
@@ -152,9 +152,9 @@ const Home =()=>{
                      
 
                       {item.likes.includes(state._id) ?
-                        <i className="material-icons" style={{color:'red'}} onClick={()=>{unlikePost(item._id)}}>favorite</i>
+                        <i key="1"className="material-icons" style={{color:'red'}} onClick={()=>{unlikePost(item._id)}}>favorite</i>
                         :
-                        <i className="material-icons" onClick={()=>{likePost(item._id)}}>favorite_border</i>
+                        <i key="2" className="material-icons" onClick={()=>{likePost(item._id)}}>favorite_border</i>
                       }
                  
                             <h6>{item.likes.length} likes</h6>
