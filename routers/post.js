@@ -68,7 +68,7 @@ router.post('/createpost',requireMiddleware,(req,res)=>{
 
 
 router.get('/myposts',requireMiddleware,(req,res)=>{
-    Post.find({postedBy:req.user._id}).populate("postedBy","_id name").then(mypost=>{
+    Post.find({postedBy:req.user._id}).populate("postedBy","_id name").sort('-createdAt').then(mypost=>{
         res.json({mypost})
     })
 

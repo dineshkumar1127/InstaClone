@@ -61,3 +61,10 @@ margin: 20px auto;
 .collection-item{
     width: 100%;
   }
+
+.nav-wrapper white{
+flex-wrap:wrap;
+  }
+.brand-logo left{
+    flex-wrap:wrap;
+}
